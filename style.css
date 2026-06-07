@@ -1,0 +1,168 @@
+body {
+    background-color: #000000;
+    font-family: 'courier new', monospace;
+}
+
+.texto-terminal{
+    color: #eaff00;
+}
+
+.contenido-lore p {
+    color: #eaff00;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.titulo-neon {
+    color: #eaff00;
+    text-shadow: 0 0 5px #eaff00, 0 0 10px #eaff00, 0 0 20px #eaff00, 0 0 40px #eaff00;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.barra-neon {
+    background-color: #0a0a0a;
+    border-bottom: 2px solid #eaff00;
+    box-shadow: 0 0 5px #eaff00, 0 0 10px #eaff00, 0 0 20px #eaff00, 0 0 40px #eaff00;
+}
+
+.caja-terminal {
+    background-color: rgba(10, 10, 10, 0.6);
+    border: 2px solid #eaff00;
+    border-radius: 0px;
+    box-shadow: 0 0 20px rgba(234, 255, 0, 0.2),inset 0 0 15px rgba(234, 255, 0, 0.1);;
+}
+
+/* Botón personalizado estilo terminal */
+.boton-neon {
+    background-color: transparent;
+    color: #eaff00;
+    border: 1px solid #eaff00;
+    border-radius: 0;
+    padding: 10px 30px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el mouse por el botón */
+.boton-neon:hover {
+    background-color: #eaff00;
+    color: #000000;
+    box-shadow: 0 0 15px #eaff00;
+}
+
+/* El efecto de parpadeo para el cursor */
+.cursor-parpadeante {
+    font-weight: bold;
+    color: #eaff00;
+    animation: parpadeo 1s step-end infinite;
+}
+
+/* La instrucción matemática para que aparezca y desaparezca */
+@keyframes parpadeo {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.hover-brillo {
+    transition: all 0.3s ease;
+}
+.hover-brillo:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px #eaff00, 0 0 20px #eaff00;
+}
+
+
+/* Preparamos la caja principal para que contenga el panel oculto */
+.caja-terminal {
+    position: relative;
+    overflow: hidden; /* Esto es vital: esconde todo lo que se salga de la caja */
+}
+
+/* EL PANEL OCULTO DE COMENTARIOS */
+.comentarios-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(5, 5, 5, 0.98); /* Fondo casi negro sólido para tapar el texto de abajo */
+    padding: 2rem;
+    
+    /* Efecto de terminal escaneando */
+    border-top: 2px solid #eaff00;
+    
+    /* Lo empujamos hacia abajo, fuera de la vista (100% de su altura) */
+    transform: translateY(100%);
+    
+    /* La animación fluida al subir */
+    transition: transform 0.4s cubic-bezier(0.1, 0.9, 0.2, 1);
+    
+    /* Flexbox para alinear el contenido al centro */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 10;
+}
+
+/* LA ACCIÓN: Cuando el mouse pasa sobre la caja, el panel sube a su posición original (0) */
+.caja-terminal:hover .comentarios-overlay {
+    transform: translateY(0);
+}
+
+/* Estilo para los textos interceptados */
+.comentario-vox {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    border-left: 2px solid #eaff00;
+    padding-left: 10px;
+    color: #cccccc; /* Un gris claro para diferenciarlo del amarillo principal */
+}
+
+.comentario-vox strong {
+    color: #eaff00;
+    display: block;
+    margin-bottom: 3px;
+}
+
+/* ESTILOS PARA LOS CAMPOS DEL FORMULARIO */
+
+/* Aspecto base de los inputs, select y textareas */
+.input-neon {
+    background-color: rgba(10, 10, 0, 0.8) !important; /* Fondo casi negro */
+    border: 1px solid #7a8500 !important; /* Borde amarillo apagado cuando no está seleccionado */
+    color: #eaff00 !important; /* Texto amarillo */
+    border-radius: 0 !important; /* Cuadrado y tosco, sin redondear */
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* El texto de "placeholder" (el ejemplo clarito que desaparece al escribir) */
+.input-neon::placeholder {
+    color: rgba(234, 255, 0, 0.3) !important;
+}
+
+/* El efecto al hacer clic en el campo para escribir (Focus) */
+.input-neon:focus {
+    border-color: #eaff00 !important;
+    box-shadow: 0 0 10px rgba(234, 255, 0, 0.3), inset 0 0 5px rgba(234, 255, 0, 0.2) !important;
+    outline: none !important;
+}
+
+/* Opciones dentro de la lista desplegable */
+.input-neon option {
+    background-color: #050505;
+    color: #eaff00;
+}
+
+/* Estilos para los botones circulares (Radio buttons) */
+.check-neon {
+    background-color: transparent !important;
+    border-color: #7a8500 !important;
+}
+
+.check-neon:checked {
+    background-color: #eaff00 !important;
+    border-color: #eaff00 !important;
+    box-shadow: 0 0 5px #eaff00 !important;
+}
